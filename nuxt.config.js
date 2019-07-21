@@ -190,7 +190,7 @@ export default {
         "type": "image/png"
       }
     ],
-    "start_url": "./index.html",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#fcd116",
