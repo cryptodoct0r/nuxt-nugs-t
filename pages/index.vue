@@ -1,93 +1,252 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
+  <div class="home">
+    <v-snackbar
+      v-model="registersnackbar"
+      top
+      color="success"
+      :timeout="10000"
     >
-      <div class="text-xs-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+      <span>Registration Sent</span>
+      <v-btn
+        flat
+        color="white"
+        @click="registersnackbar = false"
+      >close</v-btn>
+    </v-snackbar>
+    <section>
+      <Carousel />
+    </section>
+
+    <v-container>
+      <section>
+        <v-flex
+          xs12
+          class="text-xs-center my-3"
+        >
+          <h3>Find out About upcoming events and News at your finger tips.</h3>
+        </v-flex>
+
+        <v-flex xs12>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non delectus accusantium libero, tempora nobis excepturi inventore dicta corporis minima harum eum fugit! Accusamus assumenda sed sapiente inventore, eum libero modi minus quia. Eos dolor ullam magnam tempore odit debitis quas enim. Quia, expedita dolores! Quam, iure ipsum quia cupiditate iste illo deserunt recusandae. Magnam laudantium itaque ipsa commodi atque dolor sint, necessitatibus aliquam fuga expedita nisi aspernatur pariatur cumque reprehenderit impedit rem quis soluta sit ea quisquam adipisci mollitia! Aut aspernatur molestiae, illo ullam aliquid exercitationem ratione ipsa quas aperiam tempore nulla natus debitis explicabo iste excepturi deserunt? Blanditiis?</p>
+        </v-flex>
+        <v-flex
+          xs12
+          class="text-xs-center my-3"
+        >
+          <h3>What do we do?</h3>
+        </v-flex>
+        <v-flex xs12>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non delectus accusantium libero, tempora nobis excepturi inventore dicta corporis minima harum eum fugit! Accusamus assumenda sed sapiente inventore, eum libero modi minus quia. Eos dolor ullam magnam tempore odit debitis quas enim. Quia, expedita dolores! Quam, iure ipsum quia cupiditate iste illo deserunt recusandae. Magnam laudantium itaque ipsa commodi atque dolor sint, necessitatibus aliquam fuga expedita nisi aspernatur pariatur cumque reprehenderit impedit rem quis soluta sit ea quisquam adipisci mollitia! Aut aspernatur molestiae, illo ullam aliquid exercitationem ratione ipsa quas aperiam tempore nulla natus debitis explicabo iste excepturi deserunt? Blanditiis?</p>
+        </v-flex>
+      </section>
+    </v-container>
+
+    <section>
+      <v-parallax
+        src="https://www.visitkohrong.com/wp-content/uploads/2017/05/Sunset-on-Long-Beach-Koh-Rong-Island-in-Cambodia-4.jpg"
+        height="380"
+      >
+        <v-layout
+          column
+          align-center
+          justify-center
+        >
+          <div class="headline mb-3 text-xs-center">Join us to Build a brighter future together.</div>
+          <em>Kick-start your application today</em>
+          <TheRegistrationPopUp @registrationSent="registersnackbar = true" />
+        </v-layout>
+      </v-parallax>
+    </section>
+
+    <v-container>
+      <section>
+        <v-layout
+          column
+          wrap
+          class="my-5"
+          align-center
+        >
+          <v-flex
+            xs12
+            sm4
+            class="my-3"
+          >
+            <div class="text-xs-center">
+              <h2 class="headline">Some of the Benefits of bing a member</h2>
+              <span class="subheading">Cras facilisis mi vitae nunc</span>
+            </div>
+          </v-flex>
+          <div xs12>
+            <v-container grid-list-xl>
+              <v-layout
+                row
+                wrap
+                align-center
+              >
+                <v-flex
+                  xs12
+                  md4
+                >
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon
+                        x-large
+                        class="blue--text text--lighten-2"
+                      >color_lens</v-icon>
+                    </v-card-text>
+                    <v-card-title
+                      primary-title
+                      class="layout justify-center"
+                    >
+                      <div class="headline text-xs-center">Great Colorfull Events</div>
+                    </v-card-title>
+                    <v-card-text class="text-xs-center">
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex
+                  xs12
+                  md4
+                >
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon
+                        x-large
+                        class="blue--text text--lighten-2"
+                      >flash_on</v-icon>
+                    </v-card-text>
+                    <v-card-title
+                      primary-title
+                      class="layout justify-center"
+                    >
+                      <div class="headline">Fast Growth</div>
+                    </v-card-title>
+                    <v-card-text class="text-xs-center">
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex
+                  xs12
+                  md4
+                >
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon
+                        x-large
+                        class="blue--text text--lighten-2"
+                      >build</v-icon>
+                    </v-card-text>
+                    <v-card-title
+                      primary-title
+                      class="layout justify-center"
+                    >
+                      <div class="headline text-xs-center">We Build together</div>
+                    </v-card-title>
+                    <v-card-text class="text-xs-center">
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
           </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+        </v-layout>
+      </section>
+    </v-container>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
+import Carousel from "@/components/carousel2.vue";
+import TheRegistrationPopUp from "@/components/TheRegistrationPopUp";
+// import db from "@/fb";
 export default {
+  name: "Home",
+  metaInfo: {
+    title: "Nugs-Ternopil",
+    titleTemplate: "%s - Home",
+    htmlAttrs: {
+      lang: "en",
+      amp: true
+    },
+    meta: [
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "description",
+        content:
+          "National Union Of Ghana Students Ternopil comprises of Ghanaian students, with the primary aim of protecting and safeguarding the rights and interests of Ghanaian students in Ternopil."
+      },
+      {
+        name: "Keywords",
+        content:
+          "Nugs-Ternopil, nugs-ternopil, Nugs Ternopil, Nugs ternopil Ukraine, National Union Of Ghana Students Ternopil, National Union Of Ghana Students Ternopil Ukraine, nugs ternopil, nugsternopil, nugs ternopil"
+      }
+    ]
+  },
+
   components: {
-    Logo,
-    VuetifyLogo
+    Carousel,
+    TheRegistrationPopUp
+  },
+  data () {
+    return {
+      projects: [],
+      registersnackbar: false
+    };
+  },
+  // created () {
+  //   db.collection("projects").onSnapshot(res => {
+  //     const changes = res.docChanges();
+
+  //     changes.forEach(change => {
+  //       if (change.type === "added") {
+  //         this.projects.push({
+  //           ...change.doc.data(),
+  //           id: change.doc.id
+  //         });
+  //       }
+  //     });
+  //   });
+  // },
+  methods: {
+    sortBy (prop) {
+      this.projects.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.project {
+  &.complete {
+    border-left: 4px solid #3cd1c2;
+  }
+  &.ongoing {
+    border-left: 4px solid orange;
+  }
+  &.overdue {
+    border-left: 4px solid tomato;
   }
 }
-</script>
+
+.v-chip {
+  &.complete {
+    background-color: #3cd1c2;
+  }
+  &.ongoing {
+    background-color: orange;
+  }
+  &.overdue {
+    background-color: tomato;
+  }
+}
+</style>
+
